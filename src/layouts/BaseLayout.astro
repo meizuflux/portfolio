@@ -1,0 +1,19 @@
+---
+import "../styles/themes/orange.scss";
+//import "../styles/prism/atom-dark.css";
+import Head from "../components/Head.astro"
+import Navigation from "../components/Nav.astro"
+import Footer from "../components/Footer.astro"
+const { title, description } = Astro.props;
+---
+<!DOCTYPE html>
+<html>
+    <head>
+        <Head title={title} description={description} />
+    </head>
+    <body>
+        <Navigation />
+        <slot />
+        <Footer />
+    </body>
+</html>

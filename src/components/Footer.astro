@@ -1,0 +1,24 @@
+---
+const links = [
+    {"name": "rss", "url": "/blog/feed.xml"},
+    {"name": "scoresaber", "url": "https://scoresaber.com/u/3032736043471367"},
+    {"name": "discord server", "url": "https://discord.gg/"}
+]
+const socials = [
+    {"name": "github", "url": "https://github.com/meizuflux"},
+    {"name": "email", "url": "mailto:hello@meizuflux.com"},
+    {"name": "discord", "url": "https://discord.com/users/809587169520910346"},
+    {"name": "youtube", "url": "https://www.youtube.com/channel/UCymZdclkcHqM1SbCesRnkYg"}
+]
+---
+<footer>
+    copyright 2021 - {new Date().getFullYear()} meizuflux
+    <br />
+    links [ {links.map((link, i: number) => (
+        <a href={link.url}>{link.name}</a>{i != links.length - 1 ? ", " : ""}
+    ))} ]
+    <br />
+    socials [ {socials.map((social, i: number) => (
+        <a href={social.url}>{social.name}</a>{i != socials.length - 1 ? ", " : ""}
+    ))} ]
+</footer>
