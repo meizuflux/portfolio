@@ -1,0 +1,29 @@
+---
+import BaseLayout from "./Base.astro";
+import { getReadingTime } from "../lib";
+
+const { content } = Astro.props;
+---
+<style>
+    .h-stack {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+
+<BaseLayout title={content.title} description={content.description}>
+    <div style="text-align: center;">
+        <h1 style="margin-bottom: 0.5rem">{content.title}</h1>
+        <p style="margin-bottom: 0">{content.description}</p>
+    </div>
+    
+    <div class="h-stack">
+        <p>{content.created}</p>
+        <p>{getReadingTime(content.astro.source)} min read</p>
+    </div>
+
+    <article>
+        <slot />
+    </article>
+</BaseLayout>
+

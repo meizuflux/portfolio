@@ -1,0 +1,57 @@
+---
+import Base from "../layouts/Base.astro"
+
+const projects = {
+    "websites": [
+        {
+            "name": "meizuflux.com",
+            "url": "https://meizuflux.com",
+            "repo": "https://github.com/meizuflux/portfolio",
+            "stack": [["Astro", "https://astro.build"], ["SakuraCSS", "https://github.com/oxalorg/sakura"], ["Cloudflare Pages", "https://pages.cloudflare.com"]],
+            "description": "This is the website that you are currently on. I use this site as a blog, portfolio, and place to experiment with new technology."
+        },
+        {
+            "name": "mzf.one",
+            "url": "https://mzf.one",
+            "repo": "https://github.com/meizuflux/private-destination",
+            "stack": [["aiohttp", "https://docs.aiohttp.org/en/stable/web.html"], ["Bulma", "https://bulma.io"], ["PostgreSQL", "https://www.postgresql.org"], ["Jinja", "https://jinja.palletsprojects.com"]],
+            "description": "A private, closed place where I can run my own versions of whatever I want. It currently has authorization, a url shortner, and a tiny admin panel. This is probably my best project to date. If you want access please click the login button, then contact me on Discord."
+        }
+    ],
+    "packages": [
+        {
+            "name": "cion",
+            "url": "https://pypi.org/project/cion",
+            "repo": "https://github.com/meizuflux/cion",
+            "stack": [["Python", "https://python.org"]],
+            "description": "A minimal validation library that I made for use in <a href='https://mzf.one'>mzf.one</a>"
+        }
+    ],
+    "others": [
+        {
+            "name": "FastAPI Example",
+            "url": null,
+            "repo": "https://github.com/meizuflux/simple-fastapi",
+            "stack": [["FastAPI", "https://fastapi.tiangolo.com"]],
+            "description": "This is a simple FastAPI example project that showcases the many documentation features FastAPI offers."
+        }
+    ]
+}
+---
+<Base title="projects" description="various projects that I (meizuflux) have worked on">
+    <h1 style="text-align: center">projects</h1>
+    <p>Various projects and things that I've made. They're most likely on my <a href="https://github.com/meizuflux">GitHub</a>.</p>
+
+    {Object.keys(projects).map(key => (
+        <h2>{key}</h2>
+        <ul>
+            {projects[key].map(p => (
+                <li>
+                    {p.url ? <a href={p.url} target="_blank">{p.name}</a> : p.name} [{p.repo ? <a href={p.repo} target="_blank">Repo</a> : "Private"}] 
+                    ({p.stack.map(s => <a href={s[1]} target="_blank">{s[0]}</a>).reduce((acc, x) => acc === null ? x : <>{acc}, {x}</>, null)})
+                    <br /><div set:html={p.description}></div>
+                </li>
+            ))}
+        </ul>
+    ))}
+</Base>
