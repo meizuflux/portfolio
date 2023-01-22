@@ -15,8 +15,6 @@ PSU: Corsair RM 850W
 Monitors: ViewSonic VX2758-2KP-MHD (27" 1440p 144hz) + HP V223ve (21.5" 1080p 60hz) + Philips 241B8Q (23.8" 1080p 60hz)
 
 ### software
-OS: Windows 11 for gaming + Fedora for programming  
-IDE: VSCodium  
-Shell: zsh + OhMyZsh  
-DE: KDE Plasma (Wayland)  
-Terminal: Kitty
+OS: Windows 11 (stripped down with WinAero) and WSL with Debian  
+IDE: Visual Studio Code  
+Shell: fish
