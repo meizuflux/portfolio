@@ -1,17 +1,17 @@
 ---
 const links = [
-    {"name": "rss", "url": "/posts/feed.xml"},
-    {"name": "scoresaber", "url": "https://scoresaber.com/u/3032736043471367"},
+    {"name": "rss", "url": "/posts/feed.xml"}
 ]
 const socials = [
     {"name": "github", "url": "https://github.com/meizuflux"},
+    {"name": "steam", "url": "https://steamcommunity.com/id/meizuflux"},
     {"name": "email", "url": "mailto:hello@meizuflux.com"},
     {"name": "discord", "url": "https://discord.com/users/809587169520910346"},
     {"name": "youtube", "url": "https://www.youtube.com/channel/UCymZdclkcHqM1SbCesRnkYg"}
 ]
 ---
 <footer>
-    copyright 2021 - {new Date().getFullYear()} meizuflux
+    copyright {new Date().getFullYear()} meizuflux
     <br />
     links [ {links.map((link, i: number) => (
         <a href={link.url}>{link.name}</a><span>{i != links.length - 1 ? ", " : ""}</span>
