@@ -8,14 +8,14 @@ const projects = {
             "url": "https://meizuflux.com",
             "repo": "https://github.com/meizuflux/portfolio",
             "stack": [["Astro", "https://astro.build"], ["SakuraCSS", "https://github.com/oxalorg/sakura"], ["Cloudflare Pages", "https://pages.cloudflare.com"]],
-            "description": "This is the website that you are currently on. I use this site as a blog, portfolio, and place to experiment with new technology."
+            "description": "This website, I don't even know why I have it."
         },
         {
             "name": "mzf.one",
             "url": "https://mzf.one",
             "repo": "https://github.com/meizuflux/private-destination",
             "stack": [["aiohttp", "https://docs.aiohttp.org/en/stable/web.html"], ["Bulma", "https://bulma.io"], ["PostgreSQL", "https://www.postgresql.org"], ["Jinja", "https://jinja.palletsprojects.com"]],
-            "description": "A private, closed place where I can run my own versions of whatever I want. It currently has authorization, a url shortner, and a tiny admin panel. This is probably my best project to date. If you want access please click the login button, then contact me on Discord."
+            "description": "shut down because I forgot to renew the domain and I have no motivation to update it"
         }
     ],
     "packages": [
@@ -24,7 +24,7 @@ const projects = {
             "url": "https://pypi.org/project/cion",
             "repo": "https://github.com/meizuflux/cion",
             "stack": [["Python", "https://python.org"]],
-            "description": "A minimal validation library that I made for use in <a href='https://mzf.one'>mzf.one</a>"
+            "description": "A minimal validation library that I made for use in <a href='https://mzf.one'>mzf.one</a> because other data validation libraries weren't as ergonomic as I wanted them to be."
         }
     ],
     "others": [
@@ -33,21 +33,21 @@ const projects = {
             "url": null,
             "repo": "https://github.com/meizuflux/simple-fastapi",
             "stack": [["FastAPI", "https://fastapi.tiangolo.com"]],
-            "description": "This is a simple FastAPI example project that showcases the many documentation features FastAPI offers."
+            "description": "Don't use FastAPI the documentation sucks, try something like aiohttp. I made this a while back to showcase the special features it offers."
         }
     ]
 }
 ---
-<Base title="projects" description="various projects that I (meizuflux) have worked on">
+<Base title="projects" description="various projects that I have worked on">
     <h1 style="text-align: center">projects</h1>
-    <p>Various projects and things that I've made. They're most likely on my <a href="https://github.com/meizuflux">GitHub</a>.</p>
+    <p>things i have made, not updated in months most likely</p>
 
     {Object.keys(projects).map(key => (
         <h2>{key}</h2>
         <ul>
             {projects[key].map(p => (
                 <li>
-                    {p.url ? <a href={p.url} target="_blank">{p.name}</a> : p.name} [{p.repo ? <a href={p.repo} target="_blank">Repo</a> : "Private"}] 
+                    {p.url ? <a href={p.url} target="_blank">{p.name}</a> : p.name} [{p.repo ? <a href={p.repo} target="_blank">repo</a> : "private"}] 
                     ({p.stack.map(s => <a href={s[1]} target="_blank">{s[0]}</a>).reduce((acc, x) => acc === null ? x : <>{acc}, {x}</>, null)})
                     <br /><div set:html={p.description}></div>
                 </li>
