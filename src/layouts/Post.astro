@@ -2,7 +2,7 @@
 import BaseLayout from "./Base.astro";
 import { getReadingTime } from "../lib";
 
-const { content } = Astro.props;
+const { content, rawContent } = Astro.props;
 ---
 <style>
     .h-stack {
@@ -19,7 +19,7 @@ const { content } = Astro.props;
     
     <div class="h-stack">
         <p>{content.created}</p>
-        <p>{getReadingTime(content.astro.source)} min read</p>
+        <p>{getReadingTime(rawContent())} min read</p>
     </div>
 
     <article>
