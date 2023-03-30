@@ -8,14 +8,14 @@ const projects = {
             "url": "https://meizuflux.com",
             "repo": "https://github.com/meizuflux/portfolio",
             "stack": [["Astro", "https://astro.build"], ["SakuraCSS", "https://github.com/oxalorg/sakura"], ["Cloudflare Pages", "https://pages.cloudflare.com"]],
-            "description": "This website, I don't even know why I have it."
+            "description": "This website."
         },
         {
             "name": "mzf.one",
             "url": "https://mzf.one",
             "repo": "https://github.com/meizuflux/private-destination",
             "stack": [["aiohttp", "https://docs.aiohttp.org/en/stable/web.html"], ["Bulma", "https://bulma.io"], ["PostgreSQL", "https://www.postgresql.org"], ["Jinja", "https://jinja.palletsprojects.com"]],
-            "description": "shut down because I forgot to renew the domain and I have no motivation to update it"
+            "description": "Domain goes to some chinese thing, I forgot to renew the domain, and I also lost motivation to update it out of frustration with web development."
         }
     ],
     "packages": [
@@ -38,9 +38,9 @@ const projects = {
     ]
 }
 ---
-<Base title="projects" description="various projects that I have worked on">
-    <h1 style="text-align: center">projects</h1>
-    <p>things i have made, not updated in months most likely</p>
+<Base title="Projects" description="Some projects and things that I've made">
+    <h1 style="text-align: center">Projects</h1>
+    <p>Stuff I've made</p>
 
     {Object.keys(projects).map(key => (
         <h2>{key}</h2>
