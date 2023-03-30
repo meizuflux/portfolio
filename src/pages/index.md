@@ -1,6 +1,6 @@
 ---
 layout: "../layouts/Base.astro"
-title: "home"
+title: "Home"
 description: "Hello, I'm meizuflux"
 ---
 <h1 style="text-align: center">Hello, I'm meizuflux</h1>
