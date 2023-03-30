@@ -18,7 +18,7 @@ const { content, rawContent } = Astro.props;
     </div>
     
     <div class="h-stack">
-        <p>{content.created}</p>
+        <p>Posted {content.created}</p>
         <p>{getReadingTime(rawContent())} min read</p>
     </div>
 

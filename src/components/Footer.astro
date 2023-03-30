@@ -1,24 +1,23 @@
 ---
 const links = [
-    {"name": "rss", "url": "/posts/feed.xml"}
+    {"name": "RSS", "url": "/posts/feed.xml"}
 ]
 const socials = [
-    {"name": "github", "url": "https://github.com/meizuflux"},
-    {"name": "steam", "url": "https://steamcommunity.com/id/meizuflux"},
-    {"name": "email", "url": "mailto:hello@meizuflux.com"},
-    {"name": "discord", "url": "https://discord.com/users/809587169520910346"},
-    {"name": "youtube", "url": "https://www.youtube.com/channel/UCymZdclkcHqM1SbCesRnkYg"}
+    {"name": "GitHub", "url": "https://github.com/meizuflux"},
+    {"name": "Steam", "url": "https://steamcommunity.com/id/meizuflux"},
+    {"name": "Email", "url": "mailto:hello@meizuflux.com"},
+    {"name": "Discord", "url": "https://discord.com/users/809587169520910346"},
+    {"name": "YouTube", "url": "https://www.youtube.com/channel/UCymZdclkcHqM1SbCesRnkYg"}
 ]
 ---
 <footer>
-    copyright {new Date().getFullYear()} meizuflux
-    <br />
-    links [ {links.map((link, i: number) => (
+    Links {"{"} {links.map((link, i: number) => (
         <a href={link.url}>{link.name}</a><span>{i != links.length - 1 ? ", " : ""}</span>
-    ))} ]
+    ))} {"}"}
     <br />
-    socials [ {socials.map((social, i: number) => (
+    Socials {"{"} {socials.map((social, i: number) => (
         <a href={social.url}>{social.name}</a><span>{i != socials.length - 1 ? ", " : ""}</span>
-    ))} ]
+    ))} {"}"}
     <br />
+    Copyright 2022 - {new Date().getFullYear()} meizuflux
 </footer>

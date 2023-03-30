@@ -3,9 +3,13 @@ layout: "../layouts/Base.astro"
 title: "home"
 description: "hello, I'm meizuflux"
 ---
+<h1 style="text-align: center">Hello, I'm meizuflux</h1>
 
-# hello, I'm meizuflux
+I'm a programmer but lately I play more video games than code.
 
-programming but mainly gaming
+I'm quite proficient in Python, and have spent years building sophisticated Discord bots and multiple web applications.
 
-webdev sucks 
+I'm also alright at TypeScript, having built a handful of scripts and frontend web applications. I despise the JS ecosystem, and I generally try to avoid it at all costs. If I do use it, it's for simple static sites like this.
+
+I believe in privacy and have made a concious effort to think carefully about the implications of a lack of privacy. I try to use more privacy friendly alternatives to popular services and would like to de-Google fully in the future. With that said, I do still use a few invasive services like Windows, and YouTube.
+

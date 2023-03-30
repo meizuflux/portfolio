@@ -1,16 +1,15 @@
 ---
 const links = [
-    {"name": "about", "url": "/about"},
-    {"name": "gear", "url": "/gear"},
-    {"name": "projects", "url": "/projects"},
-    {"name": "posts", "url": "/posts"}
+    {"name": "Gear", "url": "/gear"},
+    {"name": "Projects", "url": "/projects"},
+    {"name": "Posts", "url": "/posts"}
 ]
 ---
-<header>
+<header style="text-align: center">
     <nav>
         <a href="/">meizuflux</a>
-        [ {links.map((link, i: number) => (
+        {"{"} {links.map((link, i: number) => (
             <a href={link.url}>{link.name}</a><span>{i != links.length - 1 ? ", " : ""}</span>
-        ))} ]
+        ))} {"}"}
     </nav>
 </header>
