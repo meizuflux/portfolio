@@ -4,13 +4,6 @@ import { getReadingTime } from "../lib";
 
 const { content, rawContent } = Astro.props;
 ---
-<style>
-    .h-stack {
-        display: flex;
-        justify-content: space-between;
-    }
-</style>
-
 <BaseLayout title={content.title} description={content.description}>
     <div style="text-align: center;">
         <h1 style="margin-bottom: 0.5rem">{content.title}</h1>
