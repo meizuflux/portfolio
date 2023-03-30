@@ -2,7 +2,7 @@ from datetime import datetime
 from sys import argv
 
 def get_filename(date: datetime, title: str) -> str:
-    return f"src/pages/posts/{date.strftime('%Y-%m-%d')}-{title.replace(' ', '-').lower()}.md"
+    return f"src/pages/posts/{date.strftime("%Y-%m-%d")}-{title.replace(" ", "-").lower()}.md"
 
 def get_formatted_date(date: datetime) -> str:
     return date.strftime("%Y %B %d %H:%M:%S")
