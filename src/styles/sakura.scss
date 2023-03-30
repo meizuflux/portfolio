@@ -225,3 +225,12 @@ ul {
     margin-left: 0;
     padding-left: 50px;
 }
+
+.h-stack {
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-link {
+    border-bottom: none !important;
+}

@@ -10,14 +10,9 @@ const socials = [
     {"name": "YouTube", "url": "https://www.youtube.com/channel/UCymZdclkcHqM1SbCesRnkYg"}
 ]
 ---
-<footer>
-    Links {"{"} {links.map((link, i: number) => (
-        <a href={link.url}>{link.name}</a><span>{i != links.length - 1 ? ", " : ""}</span>
-    ))} {"}"}
-    <br />
-    Socials {"{"} {socials.map((social, i: number) => (
-        <a href={social.url}>{social.name}</a><span>{i != socials.length - 1 ? ", " : ""}</span>
-    ))} {"}"}
-    <br />
-    Copyright 2022 - {new Date().getFullYear()} meizuflux
+<footer class="h-stack">
+    <div>
+        <a href="/posts/feed.xml">RSS</a>&nbsp; · &nbsp;Copyright 2022 - {new Date().getFullYear()} meizuflux
+    </div>
+    <a href="https://github.com/meizuflux/portfolio" class="img-link"><img src="/github-mark-white.svg" height="24" width="24"></a>
 </footer>
