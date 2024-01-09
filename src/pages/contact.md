@@ -1,6 +1,6 @@
 ---
 layout: "../layouts/Base.astro"
-title: "Contact"
+title: "contact"
 description: "Ways to contact me"
 ---
 <h1 style="text-align: center">Contact</h1>

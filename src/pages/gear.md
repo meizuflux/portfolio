@@ -1,8 +1,8 @@
 ---
 layout: "../layouts/Base.astro"
-title: "Gear"
+title: "setup"
 ---
-<h1 style="text-align: center">Gear</h1>
+<h1 style="text-align: center">Setup</h1>
 
 ### Computer
 **CPU:** Intel i7 12700K (@5.1GHz)  
