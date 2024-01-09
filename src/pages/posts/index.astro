@@ -2,8 +2,8 @@
 import Base from "../../layouts/Base.astro"
 import { getSimpleDate, getSlug, sortByYear } from "../../lib"
 
-const posts = sortByYear(Object.values(import.meta.globEager("./*.md")))
-
+const posts = sortByYear(await Astro.glob("./*.md"))
+console.log(posts)
 const years = Object.keys(posts).sort().reverse()
 ---
 <Base title="posts">
