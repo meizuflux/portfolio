@@ -1,9 +1,9 @@
 ---
 import Base from "../../layouts/Base.astro"
-import { getSimpleDate, getSlug, sortByYear } from "../../lib"
+import { getCollection } from "astro:content";
+import { getSimpleDate, sortByYear } from "../../lib"
 
-const posts = sortByYear(await Astro.glob("./*.md"))
-console.log(posts)
+const posts = sortByYear(await getCollection("posts"))
 const years = Object.keys(posts).sort().reverse()
 ---
 <Base title="posts">
@@ -14,7 +14,7 @@ const years = Object.keys(posts).sort().reverse()
         <ul>
             {posts[year].map(post => (
                 <li>
-                    <a href={`/posts/${getSlug(post.file)}`}>{post.frontmatter.title}</a> - <time>{getSimpleDate(post.frontmatter.created)}</time>
+                    <a href={`/posts/${post.slug}`}>{post.data.title}</a> - <time>{getSimpleDate(post.data.created)}</time>
                 </li>
             ))}
         </ul>

@@ -1,8 +1,7 @@
 ---
 title: "Secure Password Hashing in Python"
-layout: "../../layouts/Post.astro"
-created: "2022 April 03 14:00:25"
-modified: "2022 April 03 14:00:25"
+created: 2022-07-01
+modified: 2022-04-03
 description: "Learn how to securely hash passwords in Python"
 ---
 The password hashing function to use is `argon2id`
