@@ -10,7 +10,7 @@ const links = [
     <nav>
         <a href="/">meizuflux</a>
         {"{"} {links.map((link, i: number) => (
-            <a href={link.url}>{link.name}</a><span>{i != links.length - 1 ? ", " : ""}</span>
+            <a href={link.url}  data-astro-prefetch>{link.name}</a><span>{i != links.length - 1 ? ", " : ""}</span>
         ))} {"}"}
     </nav>
 </header>

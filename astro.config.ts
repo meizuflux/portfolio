@@ -12,5 +12,6 @@ export default defineConfig({
     build: {
         format: "file"
     },
-    integrations: [sitemap()]
+    integrations: [sitemap()],
+    prefetch: true
 });
