@@ -15,7 +15,7 @@ export const getSimpleDate = (date: Date): String => {
 export const sortByYear = (arr): { [key: number]: object } => {
 	return arr.reduce(function (obj, item) {
 		// Check if the criteria is a function to run on the item or a property of it
-		var key = item.data.created;
+		var key = item.data.created.getFullYear();
 
 		// If the key doesn't exist yet, create it
 		if (!obj.hasOwnProperty(key)) {
