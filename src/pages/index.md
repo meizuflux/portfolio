@@ -3,9 +3,9 @@ layout: "@layouts/Base.astro"
 title: ""
 description: "Hello, I'm meizuflux"
 ---
-<h1 style="text-align: center">Hello, I'm meizuflux</h1>
+<h1 style="text-align: center">hello, I'm meizuflux</h1>
 
-## Things I like
+## things I like
 - Video Games
 - Computers
 - Programming
@@ -14,7 +14,7 @@ description: "Hello, I'm meizuflux"
 - Cyberpunk 2077
 - Winter
 
-## Things I don't like
+## things I don't like
 - Advertisements
 - Bloatware
 - CSS

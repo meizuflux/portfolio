@@ -7,7 +7,7 @@ const posts = sortByYear(await getCollection("posts"))
 const years = Object.keys(posts).sort().reverse()
 ---
 <Base title="posts">
-    <h1 style="text-align: center;">Posts</h1>
+    <h1 style="text-align: center;">posts</h1>
 
     {years.map(year => (
         <h2>{year}</h2>
