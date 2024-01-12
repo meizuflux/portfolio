@@ -4,12 +4,8 @@ export const getReadingTime = (text: String): Number => {
 	return Math.ceil(words / wpm);
 };
 
-export const getSlug = (file: String): String => {
-	return file.split("/").pop().slice(0, -3);
-};
-
 export const getSimpleDate = (date: Date): String => {
-	return `${date.toLocaleString("default", { month: "long" })} ${date.getDay()}, ${date.getFullYear()}`;
+	return `${date.toLocaleString("default", { month: "long" })} ${date.getUTCDate()}, ${date.getFullYear()}`;
 };
 
 export const sortByYear = (arr): { [key: number]: object } => {
