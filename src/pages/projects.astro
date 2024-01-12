@@ -8,15 +8,37 @@ const projects = {
             "url": "https://meizuflux.com",
             "repo": "https://github.com/meizuflux/portfolio",
             "stack": [["Astro", "https://astro.build"], ["SakuraCSS", "https://github.com/oxalorg/sakura"], ["Cloudflare Pages", "https://pages.cloudflare.com"]],
-            "description": "This website."
+            "description": "This website. Built using as little manual CSS as possible while still managing to look nice."
         },
         {
             "name": "mzf.one",
-            "url": "https://mzf.one",
+            "url": null,
             "repo": "https://github.com/meizuflux/private-destination",
             "stack": [["aiohttp", "https://docs.aiohttp.org/en/stable/web.html"], ["Bulma", "https://bulma.io"], ["PostgreSQL", "https://www.postgresql.org"], ["Jinja", "https://jinja.palletsprojects.com"]],
-            "description": "Domain goes to some chinese thing, I forgot to renew the domain, and I also lost motivation to update it out of frustration with web development."
+            "description": "Note: domain expired and someone snatched it up lol. Had some neat things like POC encrypted notes, a url shortner, an invite system. Maybe one day I'll repay for another VPS and put it back up."
         }
+    ],
+    "discord bots": [
+        {
+            "name": "meizuBot",
+            "url": null,
+            "repo": "https://github.com/meizuBot/bot",
+            "stack": [
+                ["discord.py", "https://discordpy.readthedocs.io/en/stable/"],
+                ["PostgreSQL", "https://www.postgresql.org"]
+            ],
+            "description": "I created a lot of discord bots during COVID, and this was my last before the Discord Slash Commands change that caused discord.py to cease development temporarily. It's a large bot with many features, but it was never really intended to be used by a bunch of people, I just had my fun creating it and adding whatever features I felt like."
+        },
+        {
+            "name": "Coding Assistant",
+            "url": null,
+            "repo": "https://github.com/meizuflux/codingassistant",
+            "stack": [
+                ["discord.py", "https://discordpy.readthedocs.io/en/stable/"]
+            ],
+            "description": "Simple discord bot that is intended for use by developers to \"Read the docs\", providing access to docs for popular programming languages and libraries."
+        },
+        
     ],
     "packages": [
         {
@@ -33,23 +55,37 @@ const projects = {
             "url": null,
             "repo": "https://github.com/meizuflux/simple-fastapi",
             "stack": [["FastAPI", "https://fastapi.tiangolo.com"]],
-            "description": "Don't use FastAPI the documentation sucks, try something like aiohttp. I made this a while back to showcase the special features it offers."
+            "description": "Figured I could try my hand at working out a simple example of what FastAPI can do. Nowadays if I'm using a python web framework it's aiohttp."
+        },
+        {
+            "name": "stateless-discord-bot",
+            "url": null,
+            "repo": "https://github.com/meizuflux/stateless-discord-bot",
+            "stack": [
+                ["Rust", "https://rust-lang.org"],
+                ["Typescript", "https://www.typescriptlang.org/"],
+                ["Twilight", "https://twilight.rs/"],
+                ["Cloudflare Workers", "https://workers.cloudflare.com/"]
+            ],
+            "description": "Proof of concept of a serverless discord bot with no state running on cloudflare workers, entirely for free. API Schema is implemented with a CLI in TS, then the actual Worker is written in Rust with twilight."
         }
     ]
 }
 ---
 <Base title="projects" description="Some projects and things that I've made">
     <h1 style="text-align: center">Projects</h1>
-    <p>Stuff I've made</p>
 
     {Object.keys(projects).map(key => (
         <h2>{key}</h2>
         <ul>
             {projects[key].map(p => (
                 <li>
-                    {p.url ? <a href={p.url} target="_blank">{p.name}</a> : p.name} [{p.repo ? <a href={p.repo} target="_blank">repo</a> : "private"}] 
-                    ({p.stack.map(s => <a href={s[1]} target="_blank">{s[0]}</a>).reduce((acc, x) => acc === null ? x : <>{acc}, {x}</>, null)})
-                    <br /><div set:html={p.description}></div>
+                    {p.url ? <a href={p.url} target="_blank">{p.name}</a> : p.name} 
+                    &#123;{p.repo ? <a href={p.repo} target="_blank">repo</a> : "private"}&#125; 
+                    <ul>
+                        <li>Built with {p.stack.map(s => <a href={s[1]} target="_blank">{s[0]}</a>).reduce((acc, x) => acc === null ? x : <>{acc}, {x}</>, null)}</li>
+                        <li><div set:html={p.description}></div></li>
+                    </ul>
                 </li>
             ))}
         </ul>
