@@ -3,6 +3,7 @@ title: "Secure Password Hashing in Python"
 created: 2022-07-01
 modified: 2022-04-03
 description: "Learn how to securely hash passwords in Python"
+readingTime: 0
 ---
 The password hashing function to use is `argon2id`
 
