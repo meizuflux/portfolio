@@ -1,0 +1,22 @@
+@import "./sakura.scss";
+
+/* my additions */
+
+ul {
+    margin-left: 0;
+    padding-left: 50px;
+}
+
+.h-stack {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-link {
+    border-bottom: none !important;
+    height: 24px; width: 24px; 
+
+    img {
+        margin-bottom: 0;
+    }
+}

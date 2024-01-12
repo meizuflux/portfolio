@@ -1,4 +1,4 @@
-/* Sakura.css v1.3.1
+/* Sakura.css v1.5.0
  * ================
  * Minimal css theme.
  * Project: https://github.com/oxalorg/sakura/
@@ -6,9 +6,13 @@
 
 /* Body */
 
+html {
+    font-size: 62.5%; // So that root size becomes 10px
+    font-family: $font-family-base;
+}
+
 body {
     // $font-size-base must be a rem value
-    font-family: $font-family-base;
     font-size: $font-size-base;
     line-height: 1.618;
     max-width: 38em;
@@ -70,14 +74,14 @@ a {
     text-decoration: none;
     color: $color-blossom;
 
+    &:visited {
+        color: darken($color-blossom, 10%);
+    }
+
     &:hover {
         color: $color-fade;
         border-bottom: 2px solid $color-text;
     }
-
-    /*&:visited {
-        color: darken($color-blossom, 10%);
-    }*/
 
 }
 
@@ -117,16 +121,16 @@ img, video {
 /* Pre and Code */
 
 pre {
-    border-radius: 3px;
     background-color: $color-bg-alt;
     display: block;
     padding: 1em;
     overflow-x: auto;
     margin-top: 0px;
     margin-bottom: 2.5rem;
+    font-size: 0.9em;
 }
 
-code {
+code, kbd, samp {
     font-size: 0.9em;
     padding: 0 0.5em;
     background-color: $color-bg-alt;
@@ -137,6 +141,7 @@ pre > code {
     padding: 0;
     background-color: transparent;
     white-space: pre;
+    font-size: 1em;
 }
 
 /* Tables */
@@ -145,6 +150,7 @@ table {
     text-align: justify;
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 2rem;
 }
 
 td, th {
@@ -166,7 +172,7 @@ textarea {
     width: 100%;
 }
 
-.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+.button, button, input[type="submit"], input[type="reset"], input[type="button"], input[type=file]::file-selector-button {
     display: inline-block;
     padding: 5px 10px;
     text-align: center;
@@ -185,11 +191,15 @@ textarea {
         opacity: .5;
     }
 
-    &:focus:enabled, &:hover:enabled {
+    &:hover {
         background-color: $color-fade;
-        border-color: $color-fade;
         color: $color-bg;
         outline: 0;
+    }
+    
+    &:focus-visible {
+        outline-style: solid;
+        outline-width: 2px;
     }
 }
 
@@ -219,18 +229,3 @@ label, legend, fieldset {
     font-weight: 600;
 }
 
-/* my additions */
-
-ul {
-    margin-left: 0;
-    padding-left: 50px;
-}
-
-.h-stack {
-    display: flex;
-    justify-content: space-between;
-}
-
-.img-link {
-    border-bottom: none !important;
-}
