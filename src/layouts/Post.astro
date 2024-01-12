@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./Base.astro";
+import { getSimpleDate } from "@lib";
 
 const { frontmatter } = Astro.props;
 ---
@@ -10,7 +11,7 @@ const { frontmatter } = Astro.props;
     </div>
     
     <div class="h-stack">
-        <p>Posted {frontmatter.created}</p>
+        <p>Posted {frontmatter.created.toLocaleString("en", {"month": "long", "year": "numeric", "day": "numeric"})}</p>
         <p>{frontmatter.readingTime} min read</p>
     </div>
 

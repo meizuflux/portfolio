@@ -1,9 +1,9 @@
 ---
-import "../styles/themes/orange.scss";
-import "../styles/prism/dracula.css";
-import Head from "../components/Head.astro"
-import Navigation from "../components/Nav.astro"
-import Footer from "../components/Footer.astro"
+import "@styles/themes/orange.scss";
+import "@styles/prism/dracula.css";
+import Head from "@components/Head.astro"
+import Navigation from "@components/Nav.astro"
+import Footer from "@components/Footer.astro"
 var { title, description } = Astro.props; // must be var as let is scoped and const is a constant
 if (title === undefined) { // for markdown
     var { title, description } = Astro.props.content

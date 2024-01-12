@@ -1,11 +1,8 @@
 from datetime import datetime
 from sys import argv
 
-def get_filename(date: datetime, title: str) -> str:
-    return f"src/pages/posts/{date.strftime("%Y-%m-%d")}-{title.replace(" ", "-").lower()}.md"
-
-def get_formatted_date(date: datetime) -> str:
-    return date.strftime("%Y %B %d %H:%M:%S")
+def get_filename(date: str, title: str) -> str:
+    return f"src/content/posts/{date}-{title.replace(" ", "-").lower()}.md"
 
 title = " ".join(argv[1:])
 print("Using title: ", title)
@@ -20,17 +17,18 @@ else:
     quit(1)
 
 
-now = datetime.now()
+now = datetime.now().strftime("%Y-%m-%d")
 
 
 filename = get_filename(now, title)
 content = """---
 title: "{title}"
-layout: "../../layouts/Post.astro"
-created: "{date}"
-modified: "{date}"
+description: ""
+readingTime: 0
+created: {date}
+modified: {date}
 ---
-""".format(title=title, date=get_formatted_date(now))
+""".format(title=title, date=now)
 
 
 with open(filename, "w") as file:

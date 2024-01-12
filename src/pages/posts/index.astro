@@ -1,7 +1,7 @@
 ---
-import Base from "../../layouts/Base.astro"
+import Base from "@layouts/Base.astro"
 import { getCollection } from "astro:content";
-import { getSimpleDate, sortByYear } from "../../lib"
+import { getSimpleDate, sortByYear } from "@lib"
 
 const posts = sortByYear(await getCollection("posts"))
 const years = Object.keys(posts).sort().reverse()

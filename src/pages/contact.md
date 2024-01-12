@@ -1,5 +1,5 @@
 ---
-layout: "../layouts/Base.astro"
+layout: "@layouts/Base.astro"
 title: "contact"
 description: "Ways to contact me"
 ---

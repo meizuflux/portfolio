@@ -1,5 +1,5 @@
 ---
-layout: "../layouts/Base.astro"
+layout: "@layouts/Base.astro"
 title: "setup"
 ---
 <h1 style="text-align: center">Setup</h1>
