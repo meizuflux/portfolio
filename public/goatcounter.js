@@ -147,7 +147,7 @@
 		var url = goatcounter.url(vars)
 		if (!url)
 			return warn('not counting because path callback returned null')
-		navigator.sendBeacon(url)
+		fetch(url, {"method": "POST"})
 	}
 
 	// Get a query parameter.
