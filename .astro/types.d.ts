@@ -182,6 +182,13 @@ declare module 'astro:content' {
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
+"2024-01-29-useful-rounds-mods.md": {
+	id: "2024-01-29-useful-rounds-mods.md";
+  slug: "2024-01-29-useful-rounds-mods";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
 };
 
 	};
@@ -192,5 +199,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	type ContentConfig = typeof import("../src/content/config");
+	type ContentConfig = typeof import("../src/content/config.js");
 }
