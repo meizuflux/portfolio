@@ -3,7 +3,7 @@ layout: "@layouts/Base.astro"
 title: ""
 description: "Hello, I'm meizuflux"
 ---
-<h1 style="text-align: center">hello, I'm meizuflux</h1>
+# hello, I'm meizuflux
 
 ## things I like
 - Video Games

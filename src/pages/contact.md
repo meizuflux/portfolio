@@ -3,7 +3,7 @@ layout: "@layouts/Base.astro"
 title: "contact"
 description: "Ways to contact me"
 ---
-<h1 style="text-align: center">contact</h1>
+# contact
 
 Ways to contact me (in order of likeliness to respond)
 - [Discord](https://discord.com/users/809587169520910346) - `meizuflux#9688`

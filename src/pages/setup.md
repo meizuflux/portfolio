@@ -1,6 +1,7 @@
 ---
 layout: "@layouts/Base.astro"
 title: "setup"
+description: "meizuflux's pc setup"
 ---
 <h1 style="text-align: center">setup</h1>
 
@@ -9,8 +10,8 @@ title: "setup"
 **GPU:** Sapphire Nitro+ 6700XT  
 **RAM:** Corsair Vengeance 16GB DDR4 3600  
 **Motherboard:** MSI MAG Z690 TOMAHAWK  
-**CPU Cooler:** Scythe Fuma 2 + Scythe Mounting Kit  
-**Monitors:** ViewSonic XG2431 (24" 1080p 240hz) + HP V223ve (21.5" 1080p 60hz)  
+**CPU Cooler:** Scythe Fuma 2  
+**Monitors:** ViewSonic XG2431 (24" 1080p 240hz) + Generic (1080p 60hz)  
 
 ### software
 **OS:** Windows 10 LTSC

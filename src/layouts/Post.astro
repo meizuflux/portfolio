@@ -5,15 +5,12 @@ import { getSimpleDate } from "@lib";
 const { frontmatter } = Astro.props;
 ---
 <BaseLayout title={frontmatter.title} description={frontmatter.description}>
-    <div style="text-align: center;">
+    <div>
         <h1 style="margin-bottom: 0.5rem">{frontmatter.title}</h1>
-        <p style="margin-bottom: 0.5rem">{frontmatter.description}</p>
+        <p style="margin-bottom: 0.5rem" class="darker">{frontmatter.description}</p>
     </div>
     
-    <div class="h-stack">
-        <p>Posted {frontmatter.created.toLocaleString("en", {"month": "long", "year": "numeric", "day": "numeric"})}</p>
-        <p>{frontmatter.readingTime} min read</p>
-    </div>
+    <p class="darker">Posted {frontmatter.created.toLocaleString("en", {"month": "long", "year": "numeric", "day": "numeric"})}</p>
 
     <article>
         <slot />
