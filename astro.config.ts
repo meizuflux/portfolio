@@ -8,7 +8,7 @@ export default defineConfig({
   site: "https://meizuflux.com",
   output: "static",
   prefetch: {
-    defaultStrategy: "viewport"
+    defaultStrategy: "hover"
   },
   
   markdown: {
@@ -20,6 +20,12 @@ export default defineConfig({
             "shellscript",
         ]*/
     }
+  },
+  build: {
+    inlineStylesheets: "never"
+  },
+  experimental: {
+    clientPrerender: true,
   },
   integrations: [sitemap(), mdx()]
 });
