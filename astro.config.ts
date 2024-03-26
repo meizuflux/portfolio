@@ -6,6 +6,11 @@ import mdx from "@astrojs/mdx";
 // https://astro.build/config
 export default defineConfig({
   site: "https://meizuflux.com",
+  output: "static",
+  prefetch: {
+    defaultStrategy: "viewport"
+  },
+  
   markdown: {
     shikiConfig: {
         theme: "catppuccin-frappe", // see: https://shiki.style/themes
