@@ -16,16 +16,13 @@ const { title, description } = Astro.props
 <link rel="alternate" type="application/rss+xml" title="RSS Feed for meizuflux.com" href="/posts/feed.xml" />
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+    @font-face {
+        font-family: "Chivo";
+        src: url("/fonts/chivo-v18-latin-regular.woff2") format("woff2");
+    }
 
-<link
-    rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Poppins&family=Aleo&display=swap"
-    as="style"
-    onload="this.onload=null;this.rel='stylesheet'"
-/>
-
-<noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Aleo&display=swap" rel="stylesheet">
-</noscript>
+    body {
+        font-family: "Chivo", sans-serif;
+    }
+</style>
