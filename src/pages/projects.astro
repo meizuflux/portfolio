@@ -7,15 +7,15 @@ const projects = {
             "name": "meizuflux.com",
             "url": "https://meizuflux.com",
             "repo": "https://github.com/meizuflux/portfolio",
-            "stack": [["Astro", "https://astro.build"], ["SakuraCSS", "https://github.com/oxalorg/sakura"], ["Cloudflare Pages", "https://pages.cloudflare.com"]],
-            "description": "This website. Built using as little manual CSS as possible while still managing to look nice."
+            "stack": [["Astro", "https://astro.build"], ["SakuraCSS", "https://github.com/oxalorg/sakura"], ["GitHub Pages", "https://pages.github.com/"]],
+            "description": "This website."
         },
         {
             "name": "mzf.one",
             "url": null,
             "repo": "https://github.com/meizuflux/private-destination",
             "stack": [["aiohttp", "https://docs.aiohttp.org/en/stable/web.html"], ["Bulma", "https://bulma.io"], ["PostgreSQL", "https://www.postgresql.org"], ["Jinja", "https://jinja.palletsprojects.com"]],
-            "description": "Note: domain expired and someone snatched it up lol. Had some neat things like POC encrypted notes, a url shortner, an invite system. Maybe one day I'll repay for another VPS and put it back up."
+            "description": "A generic platform I worked on as a useful helper on the web, it contained lots of different parts, like encrypted notes, a url shortner, and an invite system."
         }
     ],
     "discord bots": [
@@ -36,7 +36,7 @@ const projects = {
             "stack": [
                 ["discord.py", "https://discordpy.readthedocs.io/en/stable/"]
             ],
-            "description": "Simple discord bot that is intended for use by developers to \"Read the docs\", providing access to docs for popular programming languages and libraries."
+            "description": "Simple discord bot that is intended for use by developers to \"Read the docs\", providing a way for developers to access the documentation of popular programming languages and libraries from Discord."
         },
         
     ],
@@ -46,7 +46,7 @@ const projects = {
             "url": "https://pypi.org/project/cion",
             "repo": "https://github.com/meizuflux/cion",
             "stack": [["Python", "https://python.org"]],
-            "description": "A minimal validation library that I made for use in <a href='https://mzf.one'>mzf.one</a> because other data validation libraries weren't as ergonomic as I wanted them to be."
+            "description": "A minimal validation library that I made for eventual use in <a href='https://mzf.one'>mzf.one</a> because other data validation libraries weren't as ergonomic as I wanted them to be. 95% feature complete for my usecase."
         }
     ],
     "others": [
@@ -75,6 +75,9 @@ const projects = {
 <Base title="projects" description="Some projects and things that I've made">
     <h1>projects</h1>
 
+    <p>Like every programmer, I have various unfinished projects (viewable on my GitHub), but these are the ones that were developed into a workable, viable state.</p>
+
+    <!-- I don't remember how this works so lets hope I never have or want to change it -->
     {Object.keys(projects).map(key => (
         <h2>{key}</h2>
         <ul>
@@ -83,7 +86,7 @@ const projects = {
                     {p.url ? <a href={p.url} target="_blank">{p.name}</a> : p.name} 
                     &#123;{p.repo ? <a href={p.repo} target="_blank">repo</a> : "private"}&#125; 
                     <ul>
-                        <li>Built with {p.stack.map(s => <a href={s[1]} target="_blank">{s[0]}</a>).reduce((acc, x) => acc === null ? x : <>{acc}, {x}</>, null)}</li>
+                        <li>Built with {p.stack.map(s => <a href={s[1]} target="_blank">{s[0]}</a>).reduce((acc, x) => acc === null ? <>{x}</> : <>{acc}, {x}</>, null)}</li>
                         <li><div set:html={p.description}></div></li>
                     </ul>
                 </li>
