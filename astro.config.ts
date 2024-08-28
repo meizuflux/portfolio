@@ -22,6 +22,7 @@ export default defineConfig({
     }
   },
   build: {
+    format: "preserve",
     inlineStylesheets: "never"
   },
   experimental: {
