@@ -3,7 +3,7 @@ layout: "@layouts/Base.astro"
 title: "setup"
 description: "meizuflux's pc setup"
 ---
-<h1 style="text-align: center">setup</h1>
+# setup
 
 ### computer
 **CPU:** Intel i7 12700K (@5.1GHz)  
