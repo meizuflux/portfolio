@@ -2,6 +2,11 @@
 
 /* my additions */
 
+body {
+    position: relative;
+    left: calc((100vw - 100%) / 2);
+}
+
 ul {
     margin-left: 0;
     padding-left: 50px;
