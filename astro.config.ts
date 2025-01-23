@@ -7,9 +7,7 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   site: "https://meizuflux.com",
   output: "static",
-  prefetch: {
-    defaultStrategy: "hover"
-  },
+  prefetch: true,
   
   markdown: {
     shikiConfig: {
