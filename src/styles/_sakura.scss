@@ -1,3 +1,5 @@
+@use "./theme-vars" as theme;
+
 /* Sakura.css v1.5.0
  * ================
  * Minimal css theme.
@@ -12,24 +14,24 @@ html {
 
 body {
     // $font-size-base must be a rem value
-    font-size: $font-size-base;
+    font-size: theme.$font-size-base;
     line-height: 1.5;
     max-width: 38em;
     margin: auto;
-    color: $color-text;
-    background-color: $color-bg;
+    color: theme.$color-text;
+    background-color: theme.$color-bg;
     padding: 13px;
 }
 
 @media (max-width: 684px) {
     body {
-        font-size: $font-size-base * 0.85;
+        font-size: theme.$font-size-base * 0.85;
     }
 }
 
 @media (max-width: 382px) {
     body {
-        font-size: $font-size-base * 0.75;
+        font-size: theme.$font-size-base * 0.75;
     }
 }
 
@@ -65,20 +67,20 @@ small, sub, sup {
 }
 
 hr {
-    border-color: $color-blossom;
+    border-color: theme.$color-blossom;
 }
 
 a {
     text-decoration: none;
-    color: $color-blossom;
+    color: theme.$color-blossom;
 
     /*&:visited {
-        color: darken($color-blossom, 10%);
+        color: darken(theme.$color-blossom, 10%); // Note: darken() might need to be theme.darken if it's a custom function, or sass:color.darken if built-in
     } */
 
     &:hover {
-        color: $color-fade;
-        border-bottom: 2px solid $color-text;
+        color: theme.$color-fade;
+        border-bottom: 2px solid theme.$color-text;
     }
 
 }
@@ -100,9 +102,9 @@ blockquote {
     padding-top: 0.8em;
     padding-bottom: 0.8em;
     padding-right: 0.8em;
-    border-left: 5px solid $color-blossom;
+    border-left: 5px solid theme.$color-blossom;
     margin-bottom: 2.5rem;
-    background-color: $color-bg-alt;
+    background-color: theme.$color-bg-alt;
 }
 
 blockquote p {
@@ -119,7 +121,7 @@ img, video {
 /* Pre and Code */
 
 pre {
-    background-color: $color-bg-alt;
+    background-color: theme.$color-bg-alt;
     display: block;
     padding: 1em;
     overflow-x: auto;
@@ -131,7 +133,7 @@ pre {
 code, kbd, samp {
     font-size: 0.9em;
     padding: 0 0.5em;
-    background-color: $color-bg-alt;
+    background-color: theme.$color-bg-alt;
     white-space: pre-wrap;
 }
 
@@ -153,16 +155,16 @@ table {
 
 td, th {
     padding: 0.5em;
-    border-bottom: 1px solid $color-bg-alt;
+    border-bottom: 1px solid theme.$color-bg-alt;
 }
 
 /* Buttons, forms and input */
 
 input, textarea {
-    border: 1px solid $color-text;
+    border: 1px solid theme.$color-text;
 
     &:focus {
-        border: 1px solid $color-blossom;
+        border: 1px solid theme.$color-blossom;
     }
 }
 
@@ -177,10 +179,10 @@ textarea {
     text-decoration: none;
     white-space: nowrap;
 
-    background-color: $color-blossom;
-    color: $color-bg;
+    background-color: theme.$color-blossom;
+    color: theme.$color-bg;
     border-radius: 1px;
-    border: 1px solid $color-blossom;
+    border: 1px solid theme.$color-blossom;
     cursor: pointer;
     box-sizing: border-box;
 
@@ -190,8 +192,8 @@ textarea {
     }
 
     &:hover {
-        background-color: $color-fade;
-        color: $color-bg;
+        background-color: theme.$color-fade;
+        color: theme.$color-bg;
         outline: 0;
     }
     
@@ -202,23 +204,23 @@ textarea {
 }
 
 textarea, select, input {
-    color: $color-text;
+    color: theme.$color-text;
     padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
     margin-bottom: 10px;
-    background-color: $color-bg-alt;
-    border: 1px solid $color-bg-alt;
+    background-color: theme.$color-bg-alt;
+    border: 1px solid theme.$color-bg-alt;
     border-radius: 4px;
     box-shadow: none;
     box-sizing: border-box;
 
     &:focus {
-        border: 1px solid $color-blossom;
+        border: 1px solid theme.$color-blossom;
         outline: 0;
     }
 }
 
 input[type="checkbox"]:focus {
-    outline: 1px dotted $color-blossom;
+    outline: 1px dotted theme.$color-blossom;
 }
 
 label, legend, fieldset {
@@ -226,4 +228,3 @@ label, legend, fieldset {
     margin-bottom: .5rem;
     font-weight: 600;
 }
-

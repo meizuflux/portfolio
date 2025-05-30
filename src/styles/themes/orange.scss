@@ -1,10 +1,12 @@
-$color-blossom: #FF7452;
-$color-fade: #FFBDAD;
+@use "../theme-vars" with (
+  $color-blossom: #FF7452,
+  $color-fade: #FFBDAD,
 
-$color-bg: #121212;
-$color-bg-alt: #000000;
+  $color-bg: #121212,
+  $color-bg-alt: #000000,
+  
+  $color-text: #D9E2EC,
+  $font-size-base: 2.16rem
+);
 
-$color-text: #D9E2EC;
-$font-size-base: 2.16rem;
-
-@import "../custom.scss";
+@use "../custom";

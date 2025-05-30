@@ -1,4 +1,5 @@
-@import "./sakura.scss";
+@use "./theme-vars" as theme;
+@use "./sakura";
 
 /* my additions */
 
@@ -27,5 +28,5 @@ ul {
 }
 
 .darker {
-    color: $color-fade
+    color: theme.$color-fade
 }
