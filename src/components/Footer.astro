@@ -13,7 +13,7 @@ const socials = [
     <p style="margin-bottom: 0">© 2022 - {new Date().getFullYear()} meizuflux</p>
     <div>
         {socials.map(social => (
-            <a href={social.url} class="icon-link" aria-label={social.name}>
+            <a href={social.url} class="icon-link" aria-label={social.name} target="_blank" rel="noopener noreferrer">
                 <Image src={social.icon} height="24" width="24" alt={social.name} />
             </a>
         ))}
