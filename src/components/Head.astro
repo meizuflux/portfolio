@@ -1,5 +1,6 @@
 ---
 import "@styles/themes/orange.scss"
+import { Font } from "astro:assets"
 
 const { title, description } = Astro.props
 ---
@@ -16,13 +17,10 @@ const { title, description } = Astro.props
 <link rel="alternate" type="application/rss+xml" title="RSS Feed for meizuflux.com" href="/posts/feed.xml" />
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
-<style>
-    @font-face {
-        font-family: "Chivo";
-        src: url("/fonts/chivo-v18-latin-regular.woff2") format("woff2");
-    }
+<Font cssVariable="--font-chivo" />
 
+<style>
     body {
-        font-family: "Chivo", sans-serif;
+        font-family: var(--font-chivo);
     }
 </style>
