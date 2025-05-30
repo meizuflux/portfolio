@@ -1,19 +1,21 @@
 ---
-const links = [
-    {"name": "RSS", "url": "/posts/rss.xml"}
-]
+import { Image } from "astro:assets";
+
+import githubIcon from "@assets/socials/github.svg";
+import discordIcon from "@assets/socials/discord.svg";
+
 const socials = [
-    {"name": "GitHub", "url": "https://github.com/meizuflux"},
-    {"name": "Steam", "url": "https://steamcommunity.com/id/meizuflux"},
-    {"name": "Email", "url": "mailto:hello@meizuflux.com"},
-    {"name": "Discord", "url": "https://discord.com/users/809587169520910346"},
-    {"name": "YouTube", "url": "https://www.youtube.com/channel/UCymZdclkcHqM1SbCesRnkYg"}
+    {"name": "GitHub", "url": "https://github.com/meizuflux", "icon": githubIcon},
+    {"name": "Discord", "url": "https://discord.com/users/809587169520910346", "icon": discordIcon},
 ]
 ---
 <footer>
     <p style="margin-bottom: 0">© 2022 - {new Date().getFullYear()} meizuflux</p>
     <div>
-        <a href="/posts/rss.xml" class="icon-link" aria-label="RSS Feed"><img src="/rss.svg" height="24" width="24" alt="RSS Feed"></a>
-        <a href="https://github.com/meizuflux/portfolio" class="icon-link" aria-label="GitHub"><img src="/github-mark-white.svg" height="24" width="24" alt="GitHub"></a>
+        {socials.map(social => (
+            <a href={social.url} class="icon-link" aria-label={social.name}>
+                <Image src={social.icon} height="24" width="24" alt={social.name} />
+            </a>
+        ))}
     </div>
 </footer>
