@@ -1,85 +1,88 @@
 ---
 import Base from "../layouts/Base.astro"
 
-const projects = {
-    "websites": [
-        {
-            "name": "meizuflux.com",
-            "url": "https://meizuflux.com",
-            "repo": "https://github.com/meizuflux/portfolio",
-            "stack": [["Astro", "https://astro.build"], ["SakuraCSS", "https://github.com/oxalorg/sakura"], ["GitHub Pages", "https://pages.github.com/"]],
-            "description": "This website."
-        },
-        {
-            "name": "mzf.one",
-            "url": null,
-            "repo": "https://github.com/meizuflux/private-destination",
-            "stack": [["aiohttp", "https://docs.aiohttp.org/en/stable/web.html"], ["Bulma", "https://bulma.io"], ["PostgreSQL", "https://www.postgresql.org"], ["Jinja", "https://jinja.palletsprojects.com"]],
-            "description": "A generic platform I worked on as a useful helper on the web, it contained lots of different parts, like encrypted notes, a url shortner, and an invite system."
-        }
-    ],
-    "discord bots": [
-        {
-            "name": "meizuBot",
-            "url": null,
-            "repo": "https://github.com/meizuBot/bot",
-            "stack": [
-                ["discord.py", "https://discordpy.readthedocs.io/en/stable/"],
-                ["PostgreSQL", "https://www.postgresql.org"]
-            ],
-            "description": "I created a lot of discord bots during COVID, and this was my last before the Discord Slash Commands change that caused discord.py to cease development temporarily. It's a large bot with many features, but it was never really intended to be used by a bunch of people, I just had my fun creating it and adding whatever features I felt like."
-        },
-        {
-            "name": "Coding Assistant",
-            "url": null,
-            "repo": "https://github.com/meizuflux/codingassistant",
-            "stack": [
-                ["discord.py", "https://discordpy.readthedocs.io/en/stable/"]
-            ],
-            "description": "Simple discord bot that is intended for use by developers to \"Read the docs\", providing a way for developers to access the documentation of popular programming languages and libraries from Discord."
-        },
-        
-    ],
-    "packages": [
-        {
-            "name": "cion",
-            "url": "https://pypi.org/project/cion",
-            "repo": "https://github.com/meizuflux/cion",
-            "stack": [["Python", "https://python.org"]],
-            "description": "A minimal validation library that I made for eventual use in <a href='https://mzf.one'>mzf.one</a> because other data validation libraries weren't as ergonomic as I wanted them to be. 95% feature complete for my usecase."
-        }
-    ],
-    "others": [
-        {
-            "name": "FastAPI Example",
-            "url": null,
-            "repo": "https://github.com/meizuflux/simple-fastapi",
-            "stack": [["FastAPI", "https://fastapi.tiangolo.com"]],
-            "description": "Figured I could try my hand at working out a simple example of what FastAPI can do. Nowadays if I'm using a python web framework it's aiohttp."
-        },
-        {
-            "name": "stateless-discord-bot",
-            "url": null,
-            "repo": "https://github.com/meizuflux/stateless-discord-bot",
-            "stack": [
-                ["Rust", "https://rust-lang.org"],
-                ["Typescript", "https://www.typescriptlang.org/"],
-                ["Twilight", "https://twilight.rs/"],
-                ["Cloudflare Workers", "https://workers.cloudflare.com/"]
-            ],
-            "description": "Proof of concept of a serverless discord bot with no state running on cloudflare workers, entirely for free. API Schema is implemented with a CLI in TS, then the actual Worker is written in Rust with twilight."
-        }
-    ]
-}
+const projects = [
+    {
+        "name": "meizuflux.com",
+        "url": "https://meizuflux.com",
+        "repo": "https://github.com/meizuflux/portfolio",
+        "stack": [
+            ["Astro", "https://astro.build"],
+            ["SakuraCSS", "https://github.com/oxalorg/sakura"],
+            ["GitHub Pages", "https://pages.github.com/"]
+        ],
+        "description": "This website. I don't like CSS or web design."
+    },
+    {
+        "name": "Scrollback",
+        "url": "https://scrollback.meizuflux.com",
+        "repo": "https://github.com/meizuflux/scrollback",
+        "stack": [
+            ["SolidJS", "https://solidjs.com"],
+            ["TailwindCSS", "https://tailwindcss.com"]
+        ],
+        "description": "WIP! This is a project that allows you to run a deep analysis on your Instagram data package. Data is 100% processed in the browser, with media in OPFS and messages in IndexedDB, optimized for fast import. You can see statistics about your Instagram usage, like what time of day you're most active, your number of messages, and more. It also lets you browse and search through your messages, and export them in to more convenient formats. Not feature complete yet."
+    },
+    {
+        "name": "mzf.one",
+        "url": null,
+        "repo": "https://github.com/meizuflux/private-destination",
+        "stack": [
+            ["aiohttp", "https://docs.aiohttp.org/en/stable/web.html"],
+            ["Bulma", "https://bulma.io"],
+            ["PostgreSQL", "https://www.postgresql.org"],
+            ["Jinja", "https://jinja.palletsprojects.com"]
+        ],
+        "description": "A general purpose web service containing multiple different parts, like encrypted notes, a url shortner, and an invite system. I also implemented a simple admin panel. Domain name lapsed after I stopped development."
+    },
+    {
+        "name": "cion",
+        "url": "https://pypi.org/project/cion",
+        "repo": "https://github.com/meizuflux/cion",
+        "stack": [
+            ["Python", "https://python.org"]
+        ],
+        "description": "A pure-python data validation library that I made because other data validation libraries weren't as ergonomic as I wanted them to be."
+    },
+    {
+        "name": "meizuBot",
+        "url": null,
+        "repo": "https://github.com/meizuBot/bot",
+        "stack": [
+            ["discord.py", "https://discordpy.readthedocs.io/en/stable/"],
+            ["PostgreSQL", "https://www.postgresql.org"]
+        ],
+        "description": "I've created a lot of Discord Bots, and this was my last before the tragic Discord Slash Commands change. It's a large bot with many features, but it was never really intended to be used by a bunch of people, I just had my fun creating it and working on what I wanted to."
+    },
+    {
+        "name": "Coding Assistant",
+        "url": null,
+        "repo": "https://github.com/meizuflux/codingassistant",
+        "stack": [
+            ["discord.py", "https://discordpy.readthedocs.io/en/stable/"]
+        ],
+        "description": "Discord bot that is intended for use by developers to \"Read the docs\", providing a way for developers to access the documentation of popular programming languages and libraries from Discord."
+    },
+    {
+        "name": "stateless-discord-bot",
+        "url": null,
+        "repo": "https://github.com/meizuflux/stateless-discord-bot",
+        "stack": [
+            ["Rust", "https://rust-lang.org"],
+            ["Typescript", "https://www.typescriptlang.org/"],
+            ["Twilight", "https://twilight.rs/"],
+            ["Cloudflare Workers", "https://workers.cloudflare.com/"]
+        ],
+        "description": "Proof of concept of a serverless discord bot with no state running on cloudflare workers, entirely for free. API Schema is implemented with a CLI in TS, then the actual Worker is written in Rust with twilight."
+    }
+]
 ---
 <Base title="projects" description="Some projects and things that I've made">
-    <h1>projects</h1>
+    <h1>public projects</h1>
 
     <!-- I don't remember how this works so lets hope I never have or want to change it -->
-    {Object.keys(projects).map(key => (
-        <h2>{key}</h2>
         <ul>
-            {projects[key].map(p => (
+            {projects.map(p => (
                 <li>
                     {p.url ? <a href={p.url} target="_blank">{p.name}</a> : p.name} 
                     &#123;{p.repo ? <a href={p.repo} target="_blank">repo</a> : "private"}&#125; 
@@ -90,5 +93,4 @@ const projects = {
                 </li>
             ))}
         </ul>
-    ))}
 </Base>
