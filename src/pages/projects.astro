@@ -80,17 +80,26 @@ const projects = [
 <Base title="projects" description="Some projects and things that I've made">
     <h1>public projects</h1>
 
-    <!-- I don't remember how this works so lets hope I never have or want to change it -->
-        <ul>
-            {projects.map(p => (
-                <li>
-                    {p.url ? <a href={p.url} target="_blank">{p.name}</a> : p.name} 
-                    &#123;{p.repo ? <a href={p.repo} target="_blank">repo</a> : "private"}&#125; 
-                    <ul>
-                        <li>Built with {p.stack.map(s => <a href={s[1]} target="_blank">{s[0]}</a>).reduce((acc, x) => acc === null ? <>{x}</> : <>{acc}, {x}</>, null)}</li>
-                        <li><div set:html={p.description}></div></li>
-                    </ul>
-                </li>
-            ))}
-        </ul>
+    {projects.map((p, index) => (
+        <section>
+            <h3>
+                {p.url ? <a href={p.url} target="_blank">{p.name}</a> : p.name}
+                <small> — <a href={p.repo} target="_blank">view source</a></small>
+            </h3>
+            
+            <dl>
+                <dt>
+                    <strong>Built with:</strong>
+                </dt>
+                <dd>
+                    {p.stack.map(s => <a href={s[1]} target="_blank">{s[0]}</a>).reduce((acc, x) => acc === null ? <>{x}</> : <>{acc}, {x}</>, null)}
+                </dd>
+                
+                <dt><strong>Description:</strong></dt>
+                <dd set:html={p.description}></dd>
+            </dl>
+            
+            {index < projects.length - 1 && <hr />}
+        </section>
+    ))}
 </Base>
