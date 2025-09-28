@@ -18,6 +18,8 @@ export default defineConfig({
             provider: fontProviders.google(),
             name: "Chivo",
             cssVariable: "--font-chivo",
+            subsets: ["latin"],
+            weights: [400],
         }]
     },
     integrations: [sitemap()]
