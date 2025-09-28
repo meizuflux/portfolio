@@ -1,6 +1,8 @@
 ---
 import "@styles/themes/orange.scss"
 import { Font } from "astro:assets"
+import { ClientRouter } from "astro:transitions";
+
 
 const { title, description } = Astro.props
 ---
@@ -24,3 +26,5 @@ const { title, description } = Astro.props
         font-family: var(--font-chivo);
     }
 </style>
+
+<ClientRouter />

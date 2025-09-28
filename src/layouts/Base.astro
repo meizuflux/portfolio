@@ -2,6 +2,9 @@
 import Head from "@components/Head.astro"
 import Navigation from "@components/Nav.astro"
 import Footer from "@components/Footer.astro"
+import { fade } from "astro:transitions";
+
+
 var { title, description } = Astro.props; // must be var as let is scoped and const is a constant
 if (title === undefined) { // for markdown
     var { title, description } = Astro.props.content
@@ -12,9 +15,12 @@ if (title === undefined) { // for markdown
     <head>
         <Head title={title} description={description} />
     </head>
-    <body>
+    <body >
         <Navigation />
-        <slot />
+        
+        <main transition:animate={fade({ duration: "0.1s" })}>
+            <slot />
+        </main>
         <Footer />
     </body>
 </html>
