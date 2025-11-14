@@ -3,17 +3,6 @@ import Base from "../layouts/Base.astro"
 
 const projects = [
     {
-        "name": "meizuflux.com",
-        "url": "https://meizuflux.com",
-        "repo": "https://github.com/meizuflux/portfolio",
-        "stack": [
-            ["Astro", "https://astro.build"],
-            ["SakuraCSS", "https://github.com/oxalorg/sakura"],
-            ["GitHub Pages", "https://pages.github.com/"]
-        ],
-        "description": "This website. I don't like CSS or web design."
-    },
-    {
         "name": "Scrollback",
         "url": "https://scrollback.meizuflux.com",
         "repo": "https://github.com/meizuflux/scrollback",
@@ -21,7 +10,7 @@ const projects = [
             ["SolidJS", "https://solidjs.com"],
             ["TailwindCSS", "https://tailwindcss.com"]
         ],
-        "description": "WIP! This is a project that allows you to run a deep analysis on your Instagram data package. Data is 100% processed in the browser, with media in OPFS and messages in IndexedDB, optimized for fast import. You can see statistics about your Instagram usage, like what time of day you're most active, your number of messages, and more. It also lets you browse and search through your messages, and export them in to more convenient formats. Not feature complete yet."
+        "description": "Allows you to analyze your Instagram data package. Data is 100% processed in the browser, with media in OPFS and messages in IndexedDB, optimized for fast import. You can see statistics about your Instagram usage, like what time of day you're most active, your number of messages, and more. It also lets you browse and search through your messages, and export them in to more convenient formats. Not feature complete or production ready yet."
     },
     {
         "name": "mzf.one",
@@ -33,7 +22,7 @@ const projects = [
             ["PostgreSQL", "https://www.postgresql.org"],
             ["Jinja", "https://jinja.palletsprojects.com"]
         ],
-        "description": "A general purpose web service containing multiple different parts, like encrypted notes, a url shortner, and an invite system. I also implemented a simple admin panel. Domain name lapsed after I stopped development."
+        "description": "A general purpose web service containing multiple different parts, like encrypted notes, a url shortner, and an invite system. I also implemented a simple admin panel. Public instance not active currently."
     },
     {
         "name": "cion",
@@ -42,7 +31,7 @@ const projects = [
         "stack": [
             ["Python", "https://python.org"]
         ],
-        "description": "A pure-python data validation library that I made because other data validation libraries weren't as ergonomic as I wanted them to be."
+        "description": "A pure-python data validation library, focused on ergonomics and developer experience."
     },
     {
         "name": "meizuBot",
@@ -52,7 +41,7 @@ const projects = [
             ["discord.py", "https://discordpy.readthedocs.io/en/stable/"],
             ["PostgreSQL", "https://www.postgresql.org"]
         ],
-        "description": "I've created a lot of Discord Bots, and this was my last before the tragic Discord Slash Commands change. It's a large bot with many features, but it was never really intended to be used by a bunch of people, I just had my fun creating it and working on what I wanted to."
+        "description": "A large Discord bot with many features, but never really intended to be used by a bunch of people, I just had my fun creating it and working on what I wanted to."
     },
     {
         "name": "Coding Assistant",
@@ -73,8 +62,19 @@ const projects = [
             ["Twilight", "https://twilight.rs/"],
             ["Cloudflare Workers", "https://workers.cloudflare.com/"]
         ],
-        "description": "Proof of concept of a serverless discord bot with no state running on cloudflare workers, entirely for free. API Schema is implemented with a CLI in TS, then the actual Worker is written in Rust with twilight."
-    }
+        "description": "Proof of concept of a serverless discord bot with no state running on Cloudflare Workers, entirely for free. API Schema is implemented with a CLI in TS, then the actual Worker is written in Rust with Twilight."
+    },
+    {
+        "name": "meizuflux.com",
+        "url": "https://meizuflux.com",
+        "repo": "https://github.com/meizuflux/portfolio",
+        "stack": [
+            ["Astro", "https://astro.build"],
+            ["SakuraCSS", "https://github.com/oxalorg/sakura"],
+            ["GitHub Pages", "https://pages.github.com/"]
+        ],
+        "description": "This website. I don't like CSS or web design."
+    },
 ]
 ---
 <Base title="projects" description="Some projects and things that I've made">
@@ -86,7 +86,7 @@ const projects = [
                 {p.url ? <a href={p.url} target="_blank">{p.name}</a> : p.name}
                 <small> — <a href={p.repo} target="_blank">view source</a></small>
             </h3>
-            
+
             <dl>
                 <dt>
                     <strong>Built with:</strong>
@@ -94,11 +94,11 @@ const projects = [
                 <dd>
                     {p.stack.map(s => <a href={s[1]} target="_blank">{s[0]}</a>).reduce((acc, x) => acc === null ? <>{x}</> : <>{acc}, {x}</>, null)}
                 </dd>
-                
+
                 <dt><strong>Description:</strong></dt>
                 <dd set:html={p.description}></dd>
             </dl>
-            
+
             {index < projects.length - 1 && <hr />}
         </section>
     ))}

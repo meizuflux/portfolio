@@ -7,4 +7,4 @@ description: "Hello, I'm meizuflux"
 
 Hi, I'm meizuflux.
 
-Check out my [projects](/projects) to see what I've been working on, or [get in touch](/contact) if you'd like to chat.
+Check out my [projects](/projects), or [get in touch](/contact).
